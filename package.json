@@ -37,7 +37,7 @@
     }
   },
   "bin": {
-    "agent-kit": "./dist/bin.js"
+    "agent-kit": "dist/bin.js"
   },
   "files": [
     "dist",
