@@ -4,25 +4,56 @@
   "description": "Build a coding agent that Bugmole workers can hand tasks to: the protocol, a server and CLI helper, a client, and a conformance check.",
   "license": "MIT",
   "type": "module",
-  "repository": { "type": "git", "url": "git+https://github.com/bugmole/agent-kit.git" },
-  "homepage": "https://github.com/bugmole/agent-kit#readme",
-  "keywords": ["bugmole", "coding-agent", "agent", "protocol"],
-  "engines": { "node": ">=20" },
-  "exports": {
-    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-    "./server": { "types": "./dist/server.d.ts", "default": "./dist/server.js" },
-    "./client": { "types": "./dist/client.d.ts", "default": "./dist/client.js" },
-    "./cli": { "types": "./dist/cli-agent.d.ts", "default": "./dist/cli-agent.js" }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bugmole/agent-kit.git"
   },
-  "bin": { "agent-kit": "./dist/bin.js" },
-  "files": ["dist", "PROTOCOL.md"],
+  "homepage": "https://github.com/bugmole/agent-kit#readme",
+  "keywords": [
+    "bugmole",
+    "coding-agent",
+    "agent",
+    "protocol"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "default": "./dist/server.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    },
+    "./cli": {
+      "types": "./dist/cli-agent.d.ts",
+      "default": "./dist/cli-agent.js"
+    }
+  },
+  "bin": {
+    "agent-kit": "./dist/bin.js"
+  },
+  "files": [
+    "dist",
+    "PROTOCOL.md"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "node --test --experimental-strip-types test/*.test.ts",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
     "typescript": "^5.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
