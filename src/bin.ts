@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// bugmole-agent-kit verify <endpoint> [--credential-env NAME]
-// bugmole-agent-kit check-manifest <bugmole-agent.json>
+// npx @bugmole/agent-kit verify <endpoint> [--credential-env NAME]
+// npx @bugmole/agent-kit check-manifest <bugmole-agent.json>
 import { readFile } from "node:fs/promises";
 import { manifestProblems } from "./protocol.ts";
 import { verifyHttpAgent } from "./verify.ts";
@@ -27,6 +27,6 @@ if (command === "verify" && target) {
   if (!problems.length) console.log("PASS  The manifest is valid.");
   process.exit(problems.length ? 1 : 0);
 } else {
-  console.error("usage: bugmole-agent-kit verify <endpoint> [--credential-env NAME]\n       bugmole-agent-kit check-manifest <bugmole-agent.json>");
+  console.error("usage: npx @bugmole/agent-kit verify <endpoint> [--credential-env NAME]\n       npx @bugmole/agent-kit check-manifest <bugmole-agent.json>");
   process.exit(2);
 }

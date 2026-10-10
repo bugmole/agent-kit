@@ -4,7 +4,7 @@
 // prints progress on stderr and the TaskStatus on stdout.
 //
 //   #!/usr/bin/env node
-//   import { runAsCliAgent } from "bugmole-agent-kit/cli";
+//   import { runAsCliAgent } from "@bugmole/agent-kit/cli";
 //   await runAsCliAgent({ credentialEnv: "ACME_API_KEY", async run(request, context) {
 //     context.progress("Editing files…");
 //     return { summary: "Fixed the header.", changedFiles: ["src/header.tsx"] };

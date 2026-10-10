@@ -1,6 +1,6 @@
 // The smallest http agent: it reads the task and answers with a summary.
 // Run it with ECHO_TOKEN=secret node examples/echo-http-agent.ts, then
-// ECHO_TOKEN=secret npx bugmole-agent-kit verify http://127.0.0.1:8080 --credential-env ECHO_TOKEN
+// ECHO_TOKEN=secret npx @bugmole/agent-kit verify http://127.0.0.1:8080 --credential-env ECHO_TOKEN
 import { defineHttpAgent, serveNode } from "../src/server.ts";
 import type { AgentManifest } from "../src/protocol.ts";
 

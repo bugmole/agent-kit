@@ -1,6 +1,6 @@
 // The worker's side of the protocol: start a task on an http agent and follow
 // it to the end, or run a cli agent's command. Bugmole's worker uses this; so
-// does `bugmole-agent-kit verify`.
+// does `npx @bugmole/agent-kit verify`.
 import { execFile } from "node:child_process";
 import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";

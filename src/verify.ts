@@ -1,5 +1,5 @@
 // The conformance check developers run before submitting an agent:
-// `bugmole-agent-kit verify https://agent.example.com --credential-env ACME_TOKEN`.
+// `npx @bugmole/agent-kit verify https://agent.example.com --credential-env ACME_TOKEN`.
 // It reads the manifest, checks a wrong credential is refused, starts a small
 // task, follows it to the end, and checks that starting it again doesn't
 // start a second run.

@@ -33,7 +33,7 @@ The types are in [`src/protocol.ts`](src/protocol.ts); this page is the prose.
 - `settings`: non-secret choices a workspace makes when it connects your agent, sent with every task.
 - `capabilities`: what your agent does, shown to a workspace before it connects it. `pullRequests`: it changes the repository and opens a pull request. `localChanges`: it edits files in the worker's checkout (cli).
 
-An http agent serves its manifest at `GET /.well-known/bugmole-agent.json`. Check one with `npx bugmole-agent-kit check-manifest bugmole-agent.json`.
+An http agent serves its manifest at `GET /.well-known/bugmole-agent.json`. Check one with `npx @bugmole/agent-kit check-manifest bugmole-agent.json`.
 
 ## The task
 
@@ -91,5 +91,5 @@ in the project's checkout, with the credential in `credential.env`. The command:
 ## Getting listed
 
 1. Build your agent with this kit (`defineHttpAgent` or `runAsCliAgent`).
-2. Run `npx bugmole-agent-kit verify <endpoint> --credential-env <NAME>` (http) until every check passes.
+2. Run `npx @bugmole/agent-kit verify <endpoint> --credential-env <NAME>` (http) until every check passes.
 3. Submit your manifest to Bugmole. The Bugmole team reviews each agent before workspaces can connect it, because a connected agent gets a workspace's credential and changes its code.
